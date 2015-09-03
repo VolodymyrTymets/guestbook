@@ -1,4 +1,4 @@
-PCollection = new Mongo.Collection(null)
+
 Template.Posts.helpers({
     'posts':function(){
         var from = Session.get('from');
@@ -25,6 +25,9 @@ Template.Posts.helpers({
             })
         }
         return res;
+    },
+    isAdmin:function () {
+        return Meteor.user() && Meteor.user().emails[0].address === 'admin@admin.com';
     }
 
 })
@@ -46,5 +49,17 @@ Template.Posts.events({
         e.preventDefault();
         var from = parseInt($(e.target).attr('data-index'));
         Session.set('from',from);
+    },
+    "click .remove-button":function (e,tmp){
+        e.preventDefault();
+        var _id = $(e.target).attr('id');
+        Posts.remove(_id);
+    },
+    "click .edit-button":function (e,tmp){
+        e.preventDefault();
+        var _id = $(e.target).attr('id');
+        Session.set('selectedPostId',_id);
+        $("#open-modal").click();
     }
+
 });

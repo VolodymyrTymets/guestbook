@@ -1,41 +1,46 @@
 <template name="Post">
-    <div class="row">
-        <div class="col-md-6">
+    <div id="animatedModal">
+
+        <div class="modal-content">
+    <div class="row" >
+        <div class="col-md-6 col-md-6 col-md-offset-3">
           <form class="form-horizontal" id="new-post">
               <fieldset>
-                  <legend>Legend</legend>
+                  <legend>Enter You post hear</legend>
                   <div class="form-group">
                       <label for="input-username" class="col-lg-2 control-label">User Name</label>
                       <div class="col-lg-10">
-                          <input type="text" class="form-control" id="input-username" placeholder="User Name" required>
+                          <input type="text" class="form-control" id="input-username" placeholder="User Name" required value="{{post.username}}">
                       </div>
                   </div>
                   <div class="form-group">
                       <label for="input-email" class="col-lg-2 control-label">Email</label>
                       <div class="col-lg-10">
-                          <input type="email" class="form-control" id="input-email" placeholder="Email">
+                          <input type="email" class="form-control" id="input-email" placeholder="Email" value="{{post.email}}">
                       </div>
                   </div>
                   <div class="form-group">
                       <label for="input-url" class="col-lg-2 control-label">Homepage</label>
                       <div class="col-lg-10">
-                          <input type="url" class="form-control" id="input-url" placeholder="Homepage">
+                          <input type="url" class="form-control" id="input-url" placeholder="Homepage" value="{{post.url}}">
                       </div>
                   </div>
                   <div class="form-group">
                       <label for="input-description" class="col-lg-2 control-label">Test</label>
                       <div class="col-lg-10">
-                          <textarea type="text" class="form-control" id="input-description" placeholder="Text"></textarea>
+                          <textarea type="text" class="form-control" id="input-description" placeholder="Enter text hear... Can use Mark down " value="{{post.description}}"></textarea>
                       </div>
                   </div>
                   <div class="form-group">
                       <div class="col-lg-10 col-lg-offset-2">
-                          <button class="btn btn-default">Cancel</button>
+                          <button class="btn btn-default close-animatedModal">Cancel</button>
                           <button type="submit" class="btn btn-primary">Submit</button>
                       </div>
                   </div>
               </fieldset>
            </form>
        </div>
+        </div>
+    </div>
     </div>
 </template>

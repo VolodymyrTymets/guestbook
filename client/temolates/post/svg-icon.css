@@ -1,0 +1,17 @@
+.svg-icon{
+    width: 25px;
+    height: 25px;
+}
+.modal-content{
+    background: transparent;
+}
+.form-horizontal{
+    background: white;
+}
+ .modal-content{
+     box-shadow: none;
+ }
+.post-description{
+    max-height: 500px;
+    overflow-y: scroll;
+}
