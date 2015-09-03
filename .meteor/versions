@@ -1,6 +1,7 @@
 accounts-base@1.2.0
 accounts-password@1.1.1
 anti:i18n@0.4.3
+appshore:recaptcha@2.0.5
 autopublish@1.0.3
 autoupdate@1.2.1
 base64@1.0.3
@@ -17,6 +18,7 @@ email@1.0.6
 fastclick@1.0.3
 fezvrasta:bootstrap-material-design@0.3.0
 geojson-utils@1.0.3
+handlebars@1.0.3
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0

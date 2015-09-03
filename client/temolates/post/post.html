@@ -31,6 +31,14 @@
                           <textarea type="text" class="form-control" id="input-description" placeholder="Enter text hear... Can use Mark down " value="{{post.description}}"></textarea>
                       </div>
                   </div>
+                  {{#if isNotEditMode}}
+                  <div class="form-group">
+                      <label for="input-description" class="col-lg-2 control-label">Capcha</label>
+                      <div class="col-lg-10">
+                          {{> reCAPTCHA}}
+                      </div>
+                  </div>
+                  {{/if}}
                   <div class="form-group">
                       <div class="col-lg-10 col-lg-offset-2">
                           <button class="btn btn-default close-animatedModal">Cancel</button>

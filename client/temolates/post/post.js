@@ -13,12 +13,14 @@ Template.Post.events({
                 description:description
             });
         }else{
-        Posts.insert({
-            username:username,
-            email:email,
-            url:url,
-            description:description
-        });
+            if($('#g-recaptcha-response').val() === '') return;
+                Posts.insert({
+                    username:username,
+                    email:email,
+                    url:url,
+                    description:description
+                });
+
         }
         $(".close-animatedModal").click();
         Session.set('selectedPostId',null)
@@ -32,5 +34,8 @@ Template.Post.helpers({
     'post':function(){
         var Id = Session.get('selectedPostId');
         return Posts.findOne({_id:Id});
+    },
+    isNotEditMode:function () {
+        return    Session.get('selectedPostId') === null;
     }
 })
