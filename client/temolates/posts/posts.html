@@ -1,0 +1,36 @@
+<template name="Posts">
+    <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+
+            <th><a id="sort-name">Name</a></th>
+            <th><a id="sort-email"> Email</a></th>
+            <th>Url</th>
+            <th>Text</th>
+        </tr>
+        </thead>
+        <tbody>
+          {{#each posts}}
+              <tr>
+                  <td>
+                      {{username}}
+                  </td>
+                  <td>
+                    {{email}}
+                  </td>
+                  <td>
+                    {{url}}
+                  </td>
+                  <td>
+                    {{description}}
+                  </td>
+              </tr>
+          {{/each}}
+        </tbody>
+    </table>
+    <ul class="pagination">
+       {{#each counter}}
+           <li class=""><a href="javascript:void(0)" class="number" data-index="{{index}}"> {{display}}</a></li>
+       {{/each}}
+    </ul>
+</template>
